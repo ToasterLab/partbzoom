@@ -1,0 +1,16 @@
+<html>
+  <title>Part B Zoom Link</title>
+
+  <body>
+    <noscript>Javascript must be enabled</noscript>
+    <script>
+      const { userAgent } = navigator
+      if (userAgent.match(/(Android|iPhone|iPad|iPod|Opera Mini|phone|mobile|tablet)/i)) {
+        window.location.href = `zoomus://zoom.us/join?confno=82455814098&pwd=066390`
+      } else {
+        window.location.href = `zoommtg://zoom.us/join?confno=82455814098&pwd=066390`
+      }
+    </script>
+  </body>
+
+</html>
