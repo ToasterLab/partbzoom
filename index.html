@@ -2,15 +2,41 @@
   <title>Part B Zoom Link</title>
 
   <body>
+    <div>
+      <h1>Part B Zoom Link</h1>
+      <p>This link should launch the Zoom meeting for the current Part B tutorial (C15 only) or webinar (non-electives only).</p>
+      <p>P.S. if you found this useful, you might find <a href="https://clerkent.huey.xyz">Clerkent</a> useful too. It's a browser extension that helps you
+        download and rename judgments. It also renames legislation downloaded from SSO with the full title of the legislation, whereas SSO will otherwise
+        truncate the file name to 50 characters.</p>
+    </div>
     <noscript>Javascript must be enabled</noscript>
     <script>
+
       const { userAgent } = navigator
-      if (userAgent.match(/(Android|iPhone|iPad|iPod|Opera Mini|phone|mobile|tablet)/i)) {
-        window.location.href = `zoomus://zoom.us/join?confno=82455814098&pwd=066390`
-      } else {
-        window.location.href = `zoommtg://zoom.us/join?confno=82455814098&pwd=066390`
+      const openZoom = (confNo, pwd) => {
+        if (userAgent.match(/(Android|iPhone|iPad|iPod|Opera Mini|phone|mobile|tablet)/i)) {
+          window.location.href = `zoomus://zoom.us/join?confno=${confNo}&pwd=${pwd}`
+        } else {
+          window.location.href = `zoommtg://zoom.us/join?confno=${confNo}&pwd=${pwd}`
+        }
+      }
+
+      const currentTime = (new Date())
+      if (currentTime <= new Date(2022, 10, 8)) {
+        openZoom(`82446971152`, `274707`)
+      } else if (currentTime <= new Date(2022, 10, 10)) {
+        openZoom(`84816123058`, `340909`)
+      } else if (currentTime <= new Date(2022, 10, 10, 13)) {
+        openZoom(`81293377496`, `152312`)
+      } else if (currentTime <= new Date(2022, 10, 10, 18)) {
+        openZoom(`82884738780`, `422528`)
+      } else if (currentTime <= new Date(2022, 10, 11, 13)) {
+        openZoom(`85784091529`, `804041`)
+      } else if (currentTime <= new Date(2022, 10, 11, 18)) {
+        openZoom(`86290209580`, `250967`)
       }
     </script>
+    <script data-goatcounter="https://huey-misc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>
 
 </html>
